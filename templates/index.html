@@ -82,14 +82,14 @@
 
     <div class="container">
       <div class="hero-content">
-        <h1>I'm <span class="typed" data-typed-items="Alex Smith, Designer, Developer, Freelancer, Photographer"></span></h1>
+        <h1>I'm <span class="typed" data-typed-items="Pritesh Singh, Developer, Freelancer, Musician"></span></h1>
         <p>Designer, Developer, Freelancer, Photographer</p>
 
         <ul class="list-unstyled list-social">
-          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="https://www.facebook.com/pritesh.singh.509"><i class="bi bi-facebook"></i></a></li>
           <li><a href="#"><i class="bi bi-twitter"></i></a></li>
           <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/pritesh-singh-013402175/"><i class="bi bi-linkedin"></i></a></li>
         </ul>
       </div>
     </div>
@@ -130,54 +130,16 @@
         <div class="services-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
 
+            {% for skill in skill_list %}
             <div class="swiper-slide">
               <div class="services-block">
                 <i class="bi bi-briefcase"></i>
-                <span>UI/UX DESIGN</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
+                <span>{{skill.name}}</span>
+                <p class="separator">{{skill.description}}</p>
               </div>
             </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-card-checklist"></i>
-                <span>BRAND IDENTITY</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-bar-chart"></i>
-                <span>WEB DESIGN</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-binoculars"></i>
-                <span>MOBILE APPS</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-brightness-high"></i>
-                <span>Analytics</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-calendar4-week"></i>
-                <span>PHOTOGRAPHY</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
+           {% endfor %}
           </div>
           <div class="swiper-pagination"></div>
         </div>
