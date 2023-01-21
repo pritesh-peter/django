@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import IndexPageView
+from .views import IndexPageView,submit_message
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexPageView.as_view(), name="homepage"),
-
+    path('submitmessage',submit_message),
 ]

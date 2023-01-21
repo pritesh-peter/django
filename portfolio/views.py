@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render
-from cv.models import Skill
+from django.shortcuts import render,redirect
+from cv.models import Skill,Message
 
 # here we are following the convention provided by Django
 # IndexPageView vanne class call garyo vane index.html pathauxa
@@ -14,4 +14,24 @@ class IndexPageView(TemplateView):
         return context
 
 def index(request):
-    return render(request,"index.html")
+    return render(request,"homepage")
+
+
+def submit_message(request):
+    if request.method=="POST":
+
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        m = Message()
+        m.name = name
+        m.email = email
+        m.subject = subject
+        m.message = message
+
+        m.save()
+
+        return redirect('.')
+    return redirect(request,'.',{})
