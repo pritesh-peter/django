@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render,redirect
 from cv.models import Skill,Message
+from blog.models import Blog
 
 # here we are following the convention provided by Django
 # IndexPageView vanne class call garyo vane index.html pathauxa
@@ -11,6 +12,7 @@ class IndexPageView(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["skill_list"] = Skill.objects.all()
+        context["blog_list"] = Blog.objects.all()
         return context
 
 def index(request):

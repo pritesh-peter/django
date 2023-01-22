@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import IndexPageView,submit_message
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 
 urlpatterns = [
@@ -23,3 +26,4 @@ urlpatterns = [
     path('', IndexPageView.as_view(), name="homepage"),
     path('submitmessage',submit_message),
 ]
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
